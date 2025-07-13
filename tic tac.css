@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #BDE0FE; /* Light blue background */
+}
+
+.nav {
+    background-color: #CDB4DB; /* Light purple */
+    height: 70px;
+    padding-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav h1 { 
+    text-align: center;
+    color: #895ca3; /* Dark purple */
+    font-size: 30px;
+    margin: 0;
+}
+
+.mainbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    background-color: #FFC8DD; /* Light pink */
+}
+
+.gamebox {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px; /* Space between boxes */
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #895ca3; /* Dark purple border */
+    font-size: 3em; /* Larger font size for X and O */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth transitions */
+    cursor: pointer;
+    background-color: #FFFFFF; /* White background for boxes */
+    border-radius: 10px; /* Rounded corners for boxes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.box:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+    background-color: #FFFAF0; /* Light background on hover */
+}
+
+.box.x {
+    color: #FF6F61; /* Coral color for X */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.box.o {
+    color: #A2D2FF; /* Light blue color for O */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.gameinfo {
+    margin-left: 20px; /* Space between game box and info */
+    text-align: center; /* Center align text */
+}
+
+.gameinfo h2 {
+    color: #333; /* Dark gray color for the heading */
+    margin: 10px 0; /* Margin for spacing */
+}
+
+.info {
+    display: block; /* Block display for info messages */
+    margin: 10px 0; /* Margin for spacing */
+    font-size: 1.5em; /* Font size for info messages */
+    color: #333; /* Dark gray color for text */
+}
+
+#reset {
+    padding: 10px 20px; /* Padding for the reset button */
+    font-size: 1em; /* Font size for the button */
+    background-color: #FF6F61; /* Coral color for the button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color */
+}
+
+#reset:hover {
+    background-color: #FF4C3B; /* Darker coral on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.imgbox {
+    margin-top: 20px; /* Space above the image */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
+}
+
+#winImage {
+    width: 200px; /* Set a fixed width for the win image */
+    display: none; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+@keyframes winAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.winner {
+    animation: winAnimation 0.5s ease-in-out; /* Animation for winning boxes */
+}
